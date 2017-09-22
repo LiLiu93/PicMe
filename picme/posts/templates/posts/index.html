@@ -1,0 +1,87 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block title %}PicMe{% endblock %}
+{% block meta %}
+	<link rel="stylesheet" type="text/css" href="{% static 'posts/css/index.css' %}" media="screen,projection">
+	<link rel="stylesheet" type="text/css" href="{% static 'posts/css/style.css' %}">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% endblock %}
+
+{% block body %}
+	<div id="index-banner" class="parallax-container">
+		<div class="section no-pad-bot">
+			<div class="container"></div>
+		</div>
+		<div class="parallax"><img src="{% static 'accounts/image/starry-night.jpg' %}"
+								   alt="Unsplashed background img 1"></div>
+	</div>
+
+	<div class="container" id="post_list">
+
+		<div class="row ">
+			<div>
+				<form action='/posts/search/' method='GET'>
+					<div class="input-field col s12 m6 offset-m3">
+
+						<input id="key" name="key" type="text">
+						<label for="key">
+							<i class="material-icons tiny">search</i>
+							Search state or city
+						</label>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div class="card-panel"> 
+			<div id="map_wrapper">
+				<div id="map_canvas" class="mapping"></div>
+			</div>
+		</div>
+
+		<div class="divider"></div>
+
+		{% if posts_nearby %}
+		<div class="card-panel"> 
+			<div class="row">
+				<h5 class="center-align">Posts nearby</h5>
+				{% for post in posts_nearby %}
+					<div class="col s12 m4">
+						<div class="card hoverable">
+							{% include "posts/post_content.html" %}
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+		{% endif %}
+
+		<div class="divider"></div>
+
+		<div class="row">
+			<div class="right">
+				<label>Sort By:&nbsp;<a href="{% url 'posts:pop' %}">Popularity</a>&nbsp;&nbsp;&nbsp;<a href="{% url 'posts:comment' %}">Comment</a></label>
+			</div>
+		</div>
+
+		<div class="row ">
+			{% for post in posts %}
+				<div class="col s12 m6 offset-m3">
+					<div class="card hoverable">
+						{% include "posts/post_content.html" %}
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}
+
+
+{% block script %}
+	<script type="text/javascript" src="{% static 'posts/js/index.js' %}"></script>
+	<script type="text/javascript" src="{% static 'posts/js/like_post.js' %}" ></script>
+	<script type="text/javascript" src="{% static 'posts/js/index_map.js' %}" ></script>
+{% endblock %}

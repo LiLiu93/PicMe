@@ -1,0 +1,116 @@
+{% extends 'userena/profile_base.html' %}
+{% load static %}
+
+{% block title %}{{ profile.user.username }}'s Profile{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'accounts/css/profile_detail.css' %}" media="screen,projection">
+    <link rel="stylesheet" type="text/css"
+          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="screen,projection">
+    <link rel="stylesheet" type="text/css" href="{% static 'accounts/css/chat.css' %}">
+{% endblock %}
+
+{% block profile_content %}
+
+    {% if user.username == profile.user.username %}
+        <div class="container">
+            <div class="row">
+                <ul class="tabs tabs-fixed-width">
+                    <li class="tab col s3"><a class="active" target="_top" href="/accounts/{{ user.username }}">User
+                        Profile</a></li>
+                    <li class="tab col s3"><a target="_top" href="/accounts/{{ user.username }}/edit">Edit Profile</a>
+                    </li>
+                    <li class="tab col s3"><a target="_top" href="/accounts/{{ user.username }}/email">Change Email</a>
+                    </li>
+                    <li class="tab col s4"><a target="_top" href="/accounts/{{ user.username }}/password">Change
+                        Password</a></li>
+                </ul>
+            </div>
+        </div>
+    {% endif %}
+
+    <div id="profile_div" class="card-panel">
+        <ul class="collection">
+            <li>
+                <div class="collection-item avatar">
+                    <i class="material-icons circle ">perm_identity</i>
+                    <span class="title">
+					User Name:
+				</span>
+                    <p>
+                        {{ profile.user.username }}
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="collection-item avatar">
+                    <i class="fa fa-user-circle circle" aria-hidden="true"></i>
+                    <span class="title">
+					Nick Name:
+				</span>
+                    <p>
+                        {{ profile.user.user_profile.nick_name }}
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="collection-item avatar">
+                    <i class="material-icons circle ">insert_chart</i>
+                    <span class="title">
+					Description:
+				</span>
+                    <p>
+                        {{ profile.user.user_profile.description }}
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="collection-item avatar">
+                    <i class="fa fa-venus-mars circle" aria-hidden="true"></i>
+                    <span class="title">
+					Gender:
+				</span>
+                    <p>
+                        {{ profile.user.user_profile.get_gender_display }}
+                    </p>
+                </div>
+            </li>
+
+            <li>
+                <div class="collection-item avatar">
+                    <i class="material-icons circle">email</i>
+                    <span class="title">
+					Email:
+				</span>
+                    <p>
+                        {{ profile.user.email }}
+                    </p>
+                </div>
+            </li>
+
+            {% include "userena/follow.html" %}
+
+        </ul>
+
+    </div>
+
+    {% include "userena/my_follows.html" %}
+
+    <div class="card-panel"> 
+        <div id="map_wrapper">
+            <div id="map_canvas" class="mapping"></div>
+        </div>
+    </div>
+
+{% include "userena/chatModal.html" %}
+
+{% endblock %}
+
+{% block morescript %}
+    <script type="text/javascript"> 
+        var user_id = "{{profile.user.id}}";
+    </script>
+    <script src="{% static 'accounts/js/map.js' %}"></script>
+    <script type="text/javascript" src="{% static 'accounts/js/chat.js' %}"></script>
+    
+{% endblock %}

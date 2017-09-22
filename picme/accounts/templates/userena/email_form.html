@@ -1,0 +1,58 @@
+{% extends 'userena/profile_base.html' %}
+{% load static %}
+
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'accounts/css/profile_detail.css' %}" media="screen,projection">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="screen,projection">
+{% endblock %}
+
+
+
+{% block profile_content %}
+
+<div class="container">
+	<div class="row">
+		<ul class="tabs tabs-fixed-width">
+			<li class="tab col s3"><a target="_top" href="/accounts/{{user.username}}">User Profile</a></li>
+			<li class="tab col s3"><a target="_top" href="/accounts/{{user.username}}/edit">Edit Profile</a></li>
+			<li class="tab col s3"><a class="active" target="_top" href="/accounts/{{user.username}}/email">Change Email</a></li>
+			<li class="tab col s4"><a target="_top" href="/accounts/{{user.username}}/password">Change Password</a></li>
+		</ul>
+	</div>
+</div>
+
+
+<div id="" class="card-panel">
+
+	<ul class="collection">
+		<form id="emil_form" action="" method="post">
+			{% csrf_token %}
+			<li>
+				<div class="collection-item avatar">
+					<i class="material-icons circle">email</i>
+					<div class="row">
+						<div class="col m9">
+							{{ form.email.label_tag }}
+							{{ form.email }}
+						</div>
+						<div class="col m3 red-text">
+							{{ form.email.errors }}
+						</div>
+					</div>
+				</div>
+			</li><br>
+			
+			<div class="row">
+				<div class="col m9 center-align">
+					<a class="black waves-effect waves-light btn " onclick="$('#emil_form').submit()">Save changes</a>
+				</div>
+			</div>
+		
+		</form>
+	</ul>	
+</div>
+
+
+
+{% endblock %}

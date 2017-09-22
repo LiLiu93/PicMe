@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>      
+
+	<title>{% block title %}{% endblock %}</title>
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	
+	{% block meta %}{% endblock %}
+	
+	<link rel="stylesheet" type="text/css" href="{% static 'base/css/base.css' %}">
+</head>
+ 
+
+<body id="{% block body_id %}{% endblock %}" class=" {% block body_class %}{% endblock %}">
+	<header>
+		{% block header %}
+            {% include "base/navbar.html" %}
+		{% endblock %}
+	</header>
+	
+	<main>
+		{% block body %}
+
+			<div class="container">
+				{% block content %}
+				
+				{% endblock %}
+			</div>
+			
+		{% endblock %}
+	</main>
+
+	{% block footer %}
+  		{% include "base/footer.html" %}
+	{% endblock %}
+
+</body>
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+<script src="{% static 'base/js/base.js' %}"></script>
+
+
+{% block script %}{% endblock %}        
+
+</html>

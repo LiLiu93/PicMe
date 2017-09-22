@@ -1,0 +1,59 @@
+{% extends 'base/base.html' %}
+{% load i18n %}
+{% load static %}
+
+
+<!-- static css file -->
+
+{% block title %}Edit Post{% endblock %}
+
+{% block content %}
+	<div class="row">
+		<div class="col s12 m8 offset-m2">
+			<div class="card-panel">
+				<form enctype="multipart/form-data" action='' method='POST' id="edit_form">
+					{% csrf_token %}
+					<div class="row">
+						<div class="input-field col s9">
+								{{form.post_title}}
+								<label>{{form.post_title.label}}*</label>
+						</div>
+						<div class="col s3 red-text">{{form.post_title.errors}}</div>
+					</div>
+
+					<div class="row">
+						<div class="input-field col s9">
+							<textarea id="id_post_description" name="post_description" 
+							class="materialize-textarea">{{form.post_description.value|default_if_none:""}}</textarea>	
+							<label for="id_post_description">{{form.post_description.label}}*</label>
+						</div>
+						<div class="col s3 red-text">{{form.post_description.errors}}</div>
+					</div>
+
+					<div class="row">
+						<div class="input-field col s9">
+							{{ form.post_state }}
+						</div>
+						<div class="col s3 red-text">{{form.post_state.errors}}</div>
+					</div>
+
+					<div class="row">
+						<div class="input-field col s9">
+							{{ form.post_city }}
+						</div>
+						<div class="col s3 red-text">{{form.post_city.errors}}</div>
+					</div>
+					<p class="center-align">
+						<a class="grey darken-2 waves-effect waves-light btn " onclick="$('#edit_form').submit()">submit</a>
+						<a class="grey darken-2 waves-effect waves-light btn " onclick="goToEditPhoto('/posts/edit_photo/{{post.id}}')">Edit photo</a>
+					</p>
+				</form>
+			</div>			
+		</div>
+	</div>
+{% endblock %}
+
+
+{% block script %}
+	<script type="text/javascript" src="{% static 'posts/js/edit.js' %}"></script>
+{% endblock %}

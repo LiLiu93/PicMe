@@ -1,0 +1,17 @@
+body {
+	background-color: #ECECEC;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+
+}
+
+main {
+	flex: 1 0 auto;
+}
+
+.nav-avatar{
+	width : 28px;
+	height : 28px;
+	vertical-align: middle;
+}

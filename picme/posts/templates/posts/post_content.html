@@ -1,0 +1,54 @@
+<div class="card-image" onclick="goToPostDetail('/posts/{{post.id}}')">
+    {% if post.file_type == 'image' %}
+	    <img class="" src="{{ post.post_picture.url }}" width="100%">
+    {% elif post.file_type == 'video' %}
+<!--    <video class="responsive-video" width="100%" controls>
+            <source src="{{ post.post_picture.url }}" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video> -->
+        <div class="video-container">
+        	<iframe width="100%"  src="{{ post.post_picture.url }}?rel=0&autoplay=false" frameborder="0" allowfullscreen></iframe>
+      	</div>
+    {% endif %}
+</div>
+
+<div class="card-content" onclick="goToPostDetail('/posts/{{post.id}}')">
+	<div class="row truncate">
+		<div class="col post_title">
+			{{ post.post_title }}
+		</div>
+		
+		<div class="col chip grey lighten-4">
+			<img src="{{ post.user.user_profile.get_mugshot_url }}"  alt = "Userena Mugshot">
+			{{ post.user.username }}
+		</div>
+	</div>
+	<p class="truncate">{{ post.post_description }}</p>
+</div>
+
+<div class="card-content" id="container">
+	<div class="feed" id="feed1">
+		{% if post in like_posts %}
+			<span class="heart heartAnimation" id="like{{ post.id }}" rel="unlike"></span>
+		{% else %}
+			<span class="heart " id="like{{ post.id }}" rel="like"></span>
+		{% endif %}
+		<span class="likeCount" id="likeCount{{ post.id }}">{{ post.numberOfLikes }}</span>
+	</div>
+
+	<div class="right-align" onclick="goToPostDetail('/posts/{{post.id}}')">
+	     <i class="material-icons">comment</i>{{ post.numberOfComment }}
+	</div>
+</div>
+
+
+
+<div class="card-action right-align" onclick="goToPostDetail('/posts/{{post.id}}')">
+	<div class="chip ">
+		{{post.post_state}}
+  	</div>
+
+  	<div class="chip ">
+		{{post.post_city}}
+  	</div>
+</div>

@@ -1,0 +1,10 @@
+#profile_bg_img_container {
+	height: 200px;
+	
+	background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#profile_mugshot_container {
+	margin-left: 15px;
+}

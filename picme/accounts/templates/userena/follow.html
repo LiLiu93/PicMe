@@ -1,0 +1,39 @@
+<li>
+	
+{% if user.username != profile.user.username %}
+	<div class="divider"></div>
+	{% if not profile.user in user.user_profile.follows.all %}
+	
+	<div>
+		<form id="follow_form" method="post" action="{% url 'accounts:follow' %}">
+		{% csrf_token %}
+			
+		<input  type="text" name="followId" hidden="" value="
+		{{ profile.user.id }}" hidden>
+		<p>
+			<a class="waves-effect waves-light btn" onclick="$('#follow_form').submit()">Follow</a>
+			{% if user.username != profile.user.username %}
+                <a class="waves-effect waves-light btn pink" onclick="window.open('{% url 'private_chat:dialogs_detail' username=profile.user.username %}')">Chat</a>
+        	{% endif %}
+		</p>
+		</form>
+	</div>
+	{% else %}
+	<div>
+		<form id="unfollow_form" method="post" action="{% url 'accounts:unfollow' %}">
+		{% csrf_token %}
+			
+		<input  type="text" name="unfollowId" hidden="" value="{{ profile.user.id }}" hidden>
+		<p>
+			<a class="waves-effect waves-light btn" onclick="$('#unfollow_form').submit()">Unfollow</a>
+			{% if user.username != profile.user.username %}
+                <a class="waves-effect waves-light btn pink" onclick="window.open('{% url 'private_chat:dialogs_detail' username=profile.user.username %}')">Chat</a>
+        	{% endif %}
+		</p>
+		</form>
+	</div>
+	{% endif %}
+{% endif %}
+
+
+</li>

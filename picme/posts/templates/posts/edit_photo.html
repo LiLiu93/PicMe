@@ -1,0 +1,40 @@
+{% extends 'base/base.html' %}
+{% load static %}
+    
+{% block title %}Edit photo{% endblock %}
+
+{% block content_title %}{% endblock %}
+
+{% block meta %}
+    <link rel="stylesheet" type="text/css" href="{% static 'posts/css/detail.css' %}" media="screen,projection">
+    <link rel="stylesheet" href="{% static 'posts/css/PhotoEditorReactUI.min.css' %}"/>
+{% endblock %}   
+
+
+
+{% block content%}
+    <div class="row center-align">
+        <div class="col s12">
+            <div class="card">
+                <div id="editor" style="width: 100%; height: 600px;"></div>
+            </div>
+        </div>
+        <input type="hidden" id="ID" value="{{ post.id }}">
+        <input type="hidden" id="photo_src" value="{{post.post_picture.url}}">
+        <form action="" method="post">{% csrf_token %}</form>
+    </div>
+{% endblock %}
+
+
+{% block script %}
+    <script src="{% static 'posts/js/vendor/react.min.js' %}"></script>
+    <script src="{% static 'posts/js/vendor/react-dom.min.js' %}"></script>
+    <script src="{% static 'posts/js/PhotoEditorSDK.min.js' %}"></script>
+    <script src="{% static 'posts/js/edit_photo.js' %}"></script>
+    <script src="{% static 'posts/js/PhotoEditorReactUI.min.js' %}"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+{% endblock %}
+
+
+</body>
+</html>

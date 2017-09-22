@@ -1,0 +1,26 @@
+<!-- My Follows -->
+{% if profile.user == user %}
+	<ul class="collection with-header">
+		<li class="collection-header"><h4>People I follow</h4></li>
+	{% if not user.user_profile.follows or user.user_profile.follows.count == 0  %}
+		<li class="collection-item red-text text-lighten-2">You have followed no one</li>
+	{% else %}
+		{% for follow in user.user_profile.follows.all %}
+			<li class="collection-item">
+				<form id="unfollow_form" method="post" action="{% url 'accounts:unfollow' %}">
+				{% csrf_token %}
+					<div class="chip grey lighten-4">
+						<a href="/accounts/{{ follow.username }}">
+							<img src="{{ follow.user_profile.get_mugshot_url }}"  alt = "Userena Mugshot">
+							{{ follow.username }}
+						</a>
+					</div>
+					<input  type="text" name="unfollowId" hidden="" value="{{ follow.id }}" hidden>
+
+					<a class="red-text lighten-2 waves-effect waves-light btn-flat right" onclick="$('#unfollow_form').submit()">Unfollow</a>
+				</form>
+			</li>
+		{% endfor %}
+	{% endif %}
+	</ul>
+{% endif %}

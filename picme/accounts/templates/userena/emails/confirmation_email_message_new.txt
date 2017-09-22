@@ -1,0 +1,16 @@
+{% load i18n %}{% autoescape off %}
+{% if not without_usernames %}Dear {{ user.username }},
+{% endif %}
+You requested a change of your email address at PicMe.
+
+
+{% trans "Please confirm this email address by clicking on the link below:" %}
+
+{{ protocol }}://localhost:8000{% url 'userena_email_confirm' confirmation_key %}
+
+
+{% trans "Thanks for using our site!" %}
+
+{% trans "Sincerely" %},
+PicMe
+{% endautoescape %}

@@ -1,0 +1,37 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}{{ user.username }}'s Profile{% endblock %}
+
+{% block meta %}
+    <link rel="stylesheet" type="text/css" href="{% static 'accounts/css/profile_base.css' %}" media="screen,projection">
+    {% block css %}
+    {% endblock %}
+{% endblock %}
+
+{% block content %}
+	<div>
+        <div id="profile_bg_img_container" class="card small z-depth-0 valign-wrapper" style="background-image: url('http://i.huffpost.com/gen/2299606/images/o-STARRY-NIGHT-facebook.jpg')">
+            <div id="profile_mugshot_container" class="valign">
+                {% if user.username == profile.user.username %}
+                <img src="{{user.user_profile.get_mugshot_url}}" alt="" class="circle responsive-img z-depth-5">
+                {% else %}
+                <img src="{{profile.user.user_profile.get_mugshot_url}}" alt="" class="circle responsive-img z-depth-5">
+                {% endif %}
+            </div>
+        </div>
+        
+        {% block profile_content %}
+
+        {% endblock %}
+        
+    </div>
+{% endblock %}
+
+{% block script %}
+<!-- <script type="text/javascript" src="{% static '/accounts/js/profile_sidebar.js' %}"></script> -->
+
+{% block morescript %}
+{% endblock %}
+
+{% endblock %}

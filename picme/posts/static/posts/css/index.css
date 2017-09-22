@@ -1,0 +1,119 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+p {
+  line-height: 2rem;
+}
+
+.button-collapse {
+  color: #26a69a;
+}
+
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+.parallax-container .section {
+  width: 100%;
+}
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+  position: absolute;
+  top: 40%;
+  }
+  #index-banner .section {
+  top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+  top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+}
+
+/*主页的margin去掉*/
+nav {
+  margin: 0 0 0 0 !important;
+}
+
+#post_list {
+  margin-top: 2%;
+}
+
+.post_title {
+  font-size: larger;
+  font-weight: bolder;
+}
+
+.card-image, .card-content, .card-action {
+  cursor:pointer;
+  cursor:hand;
+
+}
+
+#map_wrapper {
+    height: 400px;
+}
+
+#map_canvas {
+    width: 100%;
+    height: 100%;
+}
+
+
+/********************/
+/*MaterializeCSS Multi-Column Card Flow*/
+/* https://codepen.io/mike-north/pen/MwVoYp */
+
+/*.cards-container {
+  column-break-inside: avoid;
+}
+.cards-container .card {
+  display: inline-block;
+  overflow: visible;
+}
+
+@media only screen and (max-width: 600px) {
+  .cards-container {
+  -webkit-column-count: 1;
+  -moz-column-count: 1;
+  column-count: 1;
+  }
+}
+@media only screen and (min-width: 601px) {
+  .cards-container {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  }
+}
+@media only screen and (min-width: 993px) {
+  .cards-container {
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+  }
+}
+*/
+
+

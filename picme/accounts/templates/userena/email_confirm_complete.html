@@ -1,0 +1,35 @@
+{% extends 'userena/profile_base.html' %}
+{% load static %}
+
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'accounts/css/profile_detail.css' %}" media="screen,projection">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="screen,projection">
+{% endblock %}
+
+
+
+{% block profile_content %}
+
+<div class="container">
+	<div class="row">
+		<ul class="tabs tabs-fixed-width">
+			<li class="tab col s3"><a target="_top" href="/accounts/{{user.username}}">User Profile</a></li>
+			<li class="tab col s3"><a target="_top" href="/accounts/{{user.username}}/edit">Edit Profile</a></li>
+			<li class="tab col s3"><a class="active" target="_top" href="/accounts/{{user.username}}/email">Change Email</a></li>
+			<li class="tab col s4"><a target="_top" href="/accounts/{{user.username}}/password">Change Password</a></li>
+		</ul>
+	</div>
+</div>
+
+
+<div id="" class="card-panel">
+
+	<ul class="collection">
+	<p>Your new email address is saved. You can continue using {{ site.name }} with this email.</p>
+	</ul>	
+
+</div>
+
+
+{% endblock %}

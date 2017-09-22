@@ -1,0 +1,474 @@
+[
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Alabama",
+        "abbreviation": "AL"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Alaska",
+        "abbreviation": "AK"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "American Samoa",
+        "abbreviation": "AS"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Arizona",
+        "abbreviation": "AZ"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Arkansas",
+        "abbreviation": "AR"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "California",
+        "abbreviation": "CA"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Colorado",
+        "abbreviation": "CO"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Connecticut",
+        "abbreviation": "CT"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Delaware",
+        "abbreviation": "DE"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "District Of Columbia",
+        "abbreviation": "DC"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Federated States Of Micronesia",
+        "abbreviation": "FM"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Florida",
+        "abbreviation": "FL"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Georgia",
+        "abbreviation": "GA"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Guam",
+        "abbreviation": "GU"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Hawaii",
+        "abbreviation": "HI"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Idaho",
+        "abbreviation": "ID"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Illinois",
+        "abbreviation": "IL"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Indiana",
+        "abbreviation": "IN"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Iowa",
+        "abbreviation": "IA"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Kansas",
+        "abbreviation": "KS"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Kentucky",
+        "abbreviation": "KY"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Louisiana",
+        "abbreviation": "LA"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Maine",
+        "abbreviation": "ME"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Marshall Islands",
+        "abbreviation": "MH"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Maryland",
+        "abbreviation": "MD"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Massachusetts",
+        "abbreviation": "MA"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Michigan",
+        "abbreviation": "MI"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Minnesota",
+        "abbreviation": "MN"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Mississippi",
+        "abbreviation": "MS"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Missouri",
+        "abbreviation": "MO"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Montana",
+        "abbreviation": "MT"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Nebraska",
+        "abbreviation": "NE"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Nevada",
+        "abbreviation": "NV"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "New Hampshire",
+        "abbreviation": "NH"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "New Jersey",
+        "abbreviation": "NJ"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "New Mexico",
+        "abbreviation": "NM"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "New York",
+        "abbreviation": "NY"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "North Carolina",
+        "abbreviation": "NC"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "North Dakota",
+        "abbreviation": "ND"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Northern Mariana Islands",
+        "abbreviation": "MP"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Ohio",
+        "abbreviation": "OH"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Oklahoma",
+        "abbreviation": "OK"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Oregon",
+        "abbreviation": "OR"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Palau",
+        "abbreviation": "PW"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Pennsylvania",
+        "abbreviation": "PA"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Puerto Rico",
+        "abbreviation": "PR"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Rhode Island",
+        "abbreviation": "RI"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "South Carolina",
+        "abbreviation": "SC"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "South Dakota",
+        "abbreviation": "SD"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Tennessee",
+        "abbreviation": "TN"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Texas",
+        "abbreviation": "TX"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Utah",
+        "abbreviation": "UT"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Vermont",
+        "abbreviation": "VT"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Virgin Islands",
+        "abbreviation": "VI"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Virginia",
+        "abbreviation": "VA"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Washington",
+        "abbreviation": "WA"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "West Virginia",
+        "abbreviation": "WV"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Wisconsin",
+        "abbreviation": "WI"
+    	}
+	},
+    {
+		"model" : "address.State",
+		"pk" : null,
+		"fields":{
+        "name": "Wyoming",
+        "abbreviation": "WY"
+        }
+    }
+]

@@ -1,0 +1,45 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block title %}PicMe Chat Room with {{ user_visited.username }}{% endblock %}
+
+{% block meta %}
+    <link rel="stylesheet" type="text/css" href="{% static 'chat/css/chat.css' %}">
+{% endblock %}
+
+{% block body %}
+    <div class="chat-content scrollingDiv">
+        <ol class="chat">
+            {% for message in messages %}
+                {% if message.sender == request.user %}
+                    <li class="self">
+                        {% else %}
+                    <li class="other">
+                {% endif %}
+            <div class="avatar">
+                <img src="{{ message.sender.user_profile.get_mugshot_url }}" draggable="false"/>
+            </div>
+            <div class="msg">
+                <p>{{ message.content }}</p>
+                <time>{{ message.time }}</time>
+            </div>
+            </li>
+            {% endfor %}
+        </ol>
+
+        <ol class="chat" id="new-message"></ol>
+
+    </div>
+    <div class="input-field col s6">
+        <i class="material-icons prefix">mode_edit</i>
+        <textarea id="field" class="materialize-textarea"></textarea>
+        <label for="field">Message</label>
+        <button class="waves-effect waves-light btn" onclick="send_message()">Send</button>
+    </div>
+
+{% endblock %}
+
+{% block script %}
+    <script type="text/javascript" src="{% static 'chat/js/chat.js' %}"></script>
+{% endblock %}

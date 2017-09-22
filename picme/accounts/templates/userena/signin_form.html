@@ -1,0 +1,94 @@
+{% extends 'base/base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}Sign In{% endblock %}
+
+
+{% block meta %}
+	<link rel="stylesheet" type="text/css" href="{% static 'accounts/css/signin_form.css' %}" media="screen,projection">
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+
+{% block content %}
+<br><br><br>
+<div class="hide-on-small-only">
+	<br><br><br><br><br> 
+</div>
+
+<div class="row">
+	<div class="card-panel col s12 m6 l6 offset-m3 offset-l3 transparentpad white-text z-depth-5">
+		<!-- TAB -->
+		<div >
+			<ul class="tabs transparent">
+				<li class="tab col s6"><a target="_self"  href="\accounts\signup">Sign Up</a></li>
+				<li class="tab col s6"><a class="active"  href="#signin_form_div">Sign In</a></li>
+			</ul>
+		</div>
+
+		<br>
+
+		<div id="signin_form_div" class="col s12">
+			<form id="signin_form" action="" method="post">
+				{% csrf_token %}
+				
+				{% for field in form %}
+					
+					<!-- {{ field.errors }} -->
+					{# Displaying checkboxes differently #}
+				
+					{% if field.name == 'remember_me' %}
+						<!-- <p class="checkbox"> -->
+							{{ field }} 
+							<label for="id_{{ field.name }}">{{ field.label }}</label>
+						<!-- </p> -->
+					{% else %}
+						<div class="row">
+ 							<div class="input-field col s12">
+ 								<div >
+									{{ field.label_tag }}
+									{{ field }}
+									<div class="red-text">
+										{{ field.errors }}
+									</div>
+								</div>
+							</div>
+						</div>
+			
+					{% endif %}
+						
+				{% endfor %}
+
+				{% if form.non_field_errors %}
+					<div class="card-panel  transparent">
+
+						{% for error in form.non_field_errors %}
+							<label class="red-text">{{error}}</label>
+						{% endfor %}
+					</div>
+				{% endif %}
+
+				<p class="center-align ">
+					<a class="grey lighten-3 waves-effect waves-light btn black-text" onclick="$('#signin_form').submit()">Submit</a>
+				</p>
+			</form>
+		</div>
+		
+		<div>
+			<i class="Tiny material-icons">done_all</i>
+			<a class=" right " href="{% url 'userena_password_reset' %}" title="Forget Password">Forget Password</a>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
+
+
+{% block script %}
+	<!-- <script type="text/javascript" src="{% static 'accounts/js/signin.js' %}"></script> -->
+{% endblock %}

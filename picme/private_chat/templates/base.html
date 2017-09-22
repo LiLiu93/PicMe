@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}{% endblock title %}
+    {% block css %}{% endblock css %}
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+
+</head>
+<body>
+{% block content %}{% endblock content %}
+</body>
+    {% block extra_js %}{% endblock extra_js %}
+</html>
